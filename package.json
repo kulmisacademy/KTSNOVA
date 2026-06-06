@@ -11,7 +11,8 @@
     "build:only": "next build",
     "start": "next start",
     "lint": "next lint",
-    "make-logo": "node scripts/make-logo-transparent.mjs"
+    "make-logo": "node scripts/make-logo-transparent.mjs",
+    "make-favicon": "node scripts/make-favicon.mjs"
   },
   "dependencies": {
     "framer-motion": "^11.15.0",
