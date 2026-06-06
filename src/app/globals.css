@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --nova-teal: #00c896;
+  --nova-navy: #1a2744;
+  --nova-gold: #ffb347;
+  --nova-ash: #f5f7fa;
+  --font-arabic: var(--font-arabic-display), var(--font-arabic), sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-nova-ash text-nova-navy font-body antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Fallback: never hide main content if client JS / motion fails */
+  main {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .locale-so {
+    font-size: calc(1rem + 2px);
+    line-height: 1.8;
+  }
+
+  .locale-en {
+    line-height: 1.7;
+  }
+
+  .locale-ar {
+    font-family: var(--font-arabic);
+    font-size: calc(1rem + 2px);
+    line-height: 1.9;
+  }
+
+  [dir="rtl"] .nav-link::after {
+    @apply start-0 end-auto;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-nova-teal px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-nova-teal/30 min-h-[48px] min-w-[48px];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-nova-teal px-6 py-3 text-sm font-semibold text-nova-teal transition-all duration-300 hover:bg-nova-teal hover:text-white min-h-[48px] min-w-[48px];
+  }
+
+  .section-padding {
+    @apply px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:border-nova-teal hover:shadow-lg hover:shadow-nova-teal/10;
+  }
+
+  .nav-link {
+    @apply relative text-sm font-medium text-white/80 transition-colors hover:text-nova-teal;
+  }
+
+  .nav-link::after {
+    content: "";
+    @apply absolute -bottom-1 start-0 h-0.5 w-0 bg-nova-teal transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .puzzle-grid {
+    background-image:
+      linear-gradient(rgba(0, 200, 150, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 200, 150, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (pointer: fine) {
+  .custom-cursor-active,
+  .custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+@keyframes scroll-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.scroll-indicator {
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+
+@keyframes typewriter-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.typewriter-cursor::after {
+  content: "|";
+  @apply ms-1 text-nova-teal;
+  animation: typewriter-blink 1s step-end infinite;
+}
+
+[dir="rtl"] .typewriter-cursor::after {
+  content: none;
+}
+
+[dir="rtl"] .typewriter-cursor::before {
+  content: "|";
+  @apply me-1 text-nova-teal;
+  animation: typewriter-blink 1s step-end infinite;
+}

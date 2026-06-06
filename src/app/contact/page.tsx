@@ -1,0 +1,217 @@
+"use client";
+
+import { Suspense, useState, type FormEvent } from "react";
+import { useSearchParams } from "next/navigation";
+import { motion } from "framer-motion";
+import { MapPin, Mail, Phone, Clock, Send, CheckCircle2, MessageCircle } from "lucide-react";
+import PageHero from "@/components/PageHero";
+import CtaSection from "@/components/CtaSection";
+import { useLanguage } from "@/lib/i18n/LanguageProvider";
+import { fadeUp } from "@/lib/motion";
+import { CONTACT } from "@/lib/data/contact";
+
+const contactItems = [
+  { icon: MapPin, key: "location" as const, href: null, external: false },
+  { icon: Mail, key: "email" as const, href: "mailto:info@ktsnova.com", value: "info@ktsnova.com", external: false },
+  { icon: Phone, key: "phone" as const, href: CONTACT.phone.tel, value: CONTACT.phone.display, external: false },
+  {
+    icon: MessageCircle,
+    key: "whatsapp" as const,
+    href: CONTACT.whatsapp.url,
+    value: CONTACT.whatsapp.display,
+    external: true,
+  },
+  { icon: Clock, key: "hours" as const, href: null, external: false },
+];
+
+export default function ContactPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen pt-20" />}>
+      <ContactPageContent />
+    </Suspense>
+  );
+}
+
+function ContactPageContent() {
+  const { t } = useLanguage();
+  const searchParams = useSearchParams();
+  const projectName = searchParams.get("project") ?? "";
+  const needParam = searchParams.get("need") ?? "";
+  const [submitted, setSubmitted] = useState(false);
+  const [showMap, setShowMap] = useState(false);
+  const needKeys = ["software", "web", "mobile", "ecommerce", "ai", "other"] as const;
+  const defaultNeed = needKeys.includes(needParam as (typeof needKeys)[number])
+    ? needParam
+    : "software";
+  const defaultMessage = projectName ? `${t.contactPage.form.projectIntro} ${projectName}\n\n` : "";
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setSubmitted(true);
+  }
+
+  return (
+    <div className="pt-20">
+      <PageHero
+        label={t.nav.contact}
+        title={t.contactPage.title}
+        subtitle={t.contactPage.subtitle}
+      />
+
+      <section className="section-padding bg-nova-ash">
+        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-5 lg:gap-10">
+          <motion.form
+            onSubmit={handleSubmit}
+            className="rounded-2xl border border-nova-navy/10 bg-white p-6 shadow-sm sm:p-8 lg:col-span-3"
+            initial="hidden"
+            animate="show"
+            variants={fadeUp}
+            custom={0}
+          >
+            {submitted ? (
+              <div className="flex flex-col items-center py-16 text-center">
+                <CheckCircle2 className="mb-4 text-nova-teal" size={48} />
+                <p className="text-lg font-semibold text-nova-navy">{t.contactPage.form.thankYou}</p>
+              </div>
+            ) : (
+              <>
+                <h2 className="mb-6 font-heading text-xl font-bold text-nova-navy">
+                  {t.contactPage.form.send.replace(" →", "").replace(" ←", "")}
+                </h2>
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <div className="sm:col-span-2">
+                    <label className="mb-1.5 block text-sm font-medium text-nova-navy">
+                      {t.contactPage.form.name}
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      className="w-full rounded-xl border border-nova-navy/10 bg-nova-ash/30 px-4 py-3 text-base outline-none transition-colors focus:border-nova-teal focus:ring-2 focus:ring-nova-teal/20"
+                    />
+                  </div>
+                  <div>
+                    <label className="mb-1.5 block text-sm font-medium text-nova-navy">
+                      {t.contactPage.form.email}
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      className="w-full rounded-xl border border-nova-navy/10 bg-nova-ash/30 px-4 py-3 text-base outline-none transition-colors focus:border-nova-teal focus:ring-2 focus:ring-nova-teal/20"
+                    />
+                  </div>
+                  <div>
+                    <label className="mb-1.5 block text-sm font-medium text-nova-navy">
+                      {t.contactPage.form.phone}
+                    </label>
+                    <input
+                      type="tel"
+                      className="w-full rounded-xl border border-nova-navy/10 bg-nova-ash/30 px-4 py-3 text-base outline-none transition-colors focus:border-nova-teal focus:ring-2 focus:ring-nova-teal/20"
+                    />
+                  </div>
+                  <div className="sm:col-span-2">
+                    <label className="mb-1.5 block text-sm font-medium text-nova-navy">
+                      {t.contactPage.form.need}
+                    </label>
+                    <select
+                      defaultValue={defaultNeed}
+                      className="w-full rounded-xl border border-nova-navy/10 bg-nova-ash/30 px-4 py-3 text-base outline-none transition-colors focus:border-nova-teal focus:ring-2 focus:ring-nova-teal/20"
+                    >
+                      {needKeys.map((key) => (
+                        <option key={key} value={key}>
+                          {t.contactPage.form.needs[key]}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="sm:col-span-2">
+                    <label className="mb-1.5 block text-sm font-medium text-nova-navy">
+                      {t.contactPage.form.message}
+                    </label>
+                    <textarea
+                      rows={5}
+                      required
+                      defaultValue={defaultMessage}
+                      className="w-full rounded-xl border border-nova-navy/10 bg-nova-ash/30 px-4 py-3 text-base outline-none transition-colors focus:border-nova-teal focus:ring-2 focus:ring-nova-teal/20"
+                    />
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  data-cursor="cta"
+                  className="btn-primary mt-6 inline-flex w-full items-center justify-center gap-2 sm:w-auto"
+                >
+                  <Send size={18} />
+                  {t.contactPage.form.send}
+                </button>
+              </>
+            )}
+          </motion.form>
+
+          <motion.div
+            className="space-y-6 lg:col-span-2"
+            initial="hidden"
+            animate="show"
+            variants={fadeUp}
+            custom={0.1}
+          >
+            <div className="rounded-2xl border border-nova-navy/10 bg-white p-6 shadow-sm">
+              <h3 className="mb-5 font-heading text-lg font-bold text-nova-navy">
+                {t.footer.contact}
+              </h3>
+              <div className="space-y-4">
+                {contactItems.map(({ icon: Icon, key, href, value, external }) => (
+                  <div key={key} className="flex items-start gap-3">
+                    <div className="rounded-lg bg-nova-teal/10 p-2">
+                      <Icon size={18} className="text-nova-teal" />
+                    </div>
+                    <div>
+                      {href ? (
+                        <a
+                          href={href}
+                          data-cursor="link"
+                          className="font-medium text-nova-navy hover:text-nova-teal"
+                          {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        >
+                          {value}
+                        </a>
+                      ) : key === "location" ? (
+                        <p className="font-medium text-nova-navy">{t.contactPage.info.location}</p>
+                      ) : (
+                        <p className="text-sm text-nova-navy/70">{t.contactPage.info.hours}</p>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="overflow-hidden rounded-2xl border border-nova-navy/10 shadow-sm">
+              {showMap ? (
+                <iframe
+                  title="KTS NOVA Location"
+                  src="https://maps.google.com/maps?q=Mogadishu,Somalia&z=13&output=embed"
+                  className="h-56 w-full border-0 sm:h-64"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setShowMap(true)}
+                  data-cursor="link"
+                  className="flex h-56 w-full flex-col items-center justify-center gap-2 bg-gradient-to-br from-nova-ash to-white text-nova-navy/70 transition-colors hover:text-nova-teal sm:h-64"
+                >
+                  <MapPin size={28} className="text-nova-teal" />
+                  <span className="text-sm font-medium">{t.contactPage.info.location}</span>
+                  <span className="text-xs text-nova-navy/50">Tap to load map</span>
+                </button>
+              )}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <CtaSection />
+    </div>
+  );
+}

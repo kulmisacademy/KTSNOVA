@@ -1,0 +1,1028 @@
+{
+  "en": {
+    "sms": {
+      "title": "School Management System",
+      "desc": "Complete platform for students, teachers, exams, fees, and parent communication.",
+      "features": [
+        "Student records",
+        "Online exams",
+        "Parent portal",
+        "Fee management"
+      ]
+    },
+    "pos": {
+      "title": "POS & Inventory System",
+      "desc": "Fast retail checkout with real-time stock and financial reporting.",
+      "features": [
+        "Quick checkout",
+        "Live inventory",
+        "Sales reports",
+        "Barcode scan"
+      ]
+    },
+    "hms": {
+      "title": "Hospital Management System",
+      "desc": "Healthcare platform for patients, appointments, pharmacy, and billing.",
+      "features": [
+        "Patient records",
+        "Appointments",
+        "Pharmacy module",
+        "Billing"
+      ]
+    },
+    "pharmacy": {
+      "title": "Pharmacy Management",
+      "desc": "Track medicines, prescriptions, stock expiry, and sales.",
+      "features": [
+        "Prescriptions",
+        "Stock alerts",
+        "Expiry tracking",
+        "Sales reports"
+      ]
+    },
+    "clinic": {
+      "title": "Clinic Management",
+      "desc": "Lightweight clinic system for appointments and patient history.",
+      "features": [
+        "Patient queue",
+        "Medical history",
+        "Billing",
+        "SMS reminders"
+      ]
+    },
+    "payroll": {
+      "title": "HR & Payroll System",
+      "desc": "Manage employees, salaries, attendance, and leave requests.",
+      "features": [
+        "Employee records",
+        "Payroll runs",
+        "Attendance",
+        "Leave management"
+      ]
+    },
+    "warehouse": {
+      "title": "Warehouse Management",
+      "desc": "Control stock levels, transfers, and warehouse operations.",
+      "features": [
+        "Stock tracking",
+        "Transfers",
+        "Supplier orders",
+        "Reports"
+      ]
+    },
+    "crm": {
+      "title": "CRM Platform",
+      "desc": "Track leads, customers, deals, and sales pipeline.",
+      "features": [
+        "Lead tracking",
+        "Customer profiles",
+        "Pipeline view",
+        "Email integration"
+      ]
+    },
+    "lms": {
+      "title": "Learning Management System",
+      "desc": "Online courses, quizzes, certificates, and student progress.",
+      "features": [
+        "Course builder",
+        "Quizzes",
+        "Certificates",
+        "Progress tracking"
+      ]
+    },
+    "university": {
+      "title": "University Portal",
+      "desc": "Campus-wide system for faculties, courses, and registration.",
+      "features": [
+        "Course registration",
+        "Faculty portal",
+        "Grades",
+        "Student ID"
+      ]
+    },
+    "restaurant": {
+      "title": "Restaurant POS",
+      "desc": "Table orders, kitchen display, menu, and billing for restaurants.",
+      "features": [
+        "Table management",
+        "Kitchen display",
+        "Menu control",
+        "Daily reports"
+      ]
+    },
+    "hotel": {
+      "title": "Hotel Booking System",
+      "desc": "Reservations, room management, check-in, and guest billing.",
+      "features": [
+        "Room booking",
+        "Check-in/out",
+        "Housekeeping",
+        "Invoicing"
+      ]
+    },
+    "inventory": {
+      "title": "Smart Inventory",
+      "desc": "Multi-branch inventory with alerts and purchase orders.",
+      "features": [
+        "Multi-branch",
+        "Low stock alerts",
+        "Purchase orders",
+        "Analytics"
+      ]
+    },
+    "logistics": {
+      "title": "Fleet & Logistics",
+      "desc": "Track vehicles, routes, deliveries, and driver performance.",
+      "features": [
+        "GPS tracking",
+        "Route planning",
+        "Driver app",
+        "Delivery proof"
+      ]
+    },
+    "ecommerce": {
+      "title": "Ecommerce Platform",
+      "desc": "Online store with mobile payments and product management.",
+      "features": [
+        "Online store",
+        "Mobile money",
+        "Product catalog",
+        "Order tracking"
+      ]
+    },
+    "marketplace": {
+      "title": "Multi-Vendor Marketplace",
+      "desc": "Multiple sellers, commissions, and unified checkout.",
+      "features": [
+        "Vendor stores",
+        "Commission rules",
+        "Unified cart",
+        "Admin dashboard"
+      ]
+    },
+    "realestate": {
+      "title": "Real Estate Portal",
+      "desc": "Property listings, search filters, and agent contact.",
+      "features": [
+        "Property listings",
+        "Map search",
+        "Agent profiles",
+        "Inquiry forms"
+      ]
+    },
+    "ngo": {
+      "title": "NGO Donation Platform",
+      "desc": "Campaigns, donations, transparency reports for NGOs.",
+      "features": [
+        "Donation campaigns",
+        "Payment gateway",
+        "Donor dashboard",
+        "Impact reports"
+      ]
+    },
+    "govportal": {
+      "title": "Government Services Portal",
+      "desc": "Citizen services, forms, and document requests online.",
+      "features": [
+        "Online forms",
+        "Document requests",
+        "Status tracking",
+        "Secure login"
+      ]
+    },
+    "cms": {
+      "title": "Content Management System",
+      "desc": "Manage pages, blogs, media, and multilingual content.",
+      "features": [
+        "Page editor",
+        "Media library",
+        "Multi-language",
+        "Role permissions"
+      ]
+    },
+    "event": {
+      "title": "Event Management Platform",
+      "desc": "Event registration, tickets, schedules, and check-in.",
+      "features": [
+        "Event pages",
+        "Ticket sales",
+        "QR check-in",
+        "Attendee list"
+      ]
+    },
+    "corporate": {
+      "title": "Corporate Website",
+      "desc": "Professional brand website with services and contact flows.",
+      "features": [
+        "Modern UI",
+        "SEO ready",
+        "Lead forms",
+        "Multi-language"
+      ]
+    },
+    "portfolio-web": {
+      "title": "Creative Portfolio Site",
+      "desc": "Showcase work, case studies, and client testimonials.",
+      "features": [
+        "Project gallery",
+        "Case studies",
+        "Testimonials",
+        "Contact CTA"
+      ]
+    },
+    "delivery": {
+      "title": "Mobile Delivery App",
+      "desc": "Customer ordering with live driver tracking and payments.",
+      "features": [
+        "GPS tracking",
+        "Mobile payments",
+        "Driver panel",
+        "Push alerts"
+      ]
+    },
+    "banking": {
+      "title": "Mobile Banking App",
+      "desc": "Account view, transfers, bills, and transaction history.",
+      "features": [
+        "Account balance",
+        "Money transfer",
+        "Bill pay",
+        "Transaction history"
+      ]
+    },
+    "taxi": {
+      "title": "Ride Booking App",
+      "desc": "Book rides, fare estimate, driver tracking, and cashless pay.",
+      "features": [
+        "Ride booking",
+        "Fare estimate",
+        "Live tracking",
+        "Driver ratings"
+      ]
+    },
+    "mosque": {
+      "title": "Mosque Community App",
+      "desc": "Prayer times, announcements, and community donations.",
+      "features": [
+        "Prayer times",
+        "Announcements",
+        "Donations",
+        "Events calendar"
+      ]
+    },
+    "fitness": {
+      "title": "Fitness & Gym App",
+      "desc": "Membership, class booking, and workout tracking.",
+      "features": [
+        "Membership",
+        "Class booking",
+        "Workout log",
+        "Trainer chat"
+      ]
+    },
+    "salon": {
+      "title": "Salon Booking App",
+      "desc": "Appointments, stylist profiles, and service menu.",
+      "features": [
+        "Online booking",
+        "Stylist profiles",
+        "Service menu",
+        "Reminders"
+      ]
+    },
+    "foodorder": {
+      "title": "Food Ordering App",
+      "desc": "Restaurant menus, cart, delivery, and order history.",
+      "features": [
+        "Restaurant menus",
+        "Live cart",
+        "Delivery tracking",
+        "Order history"
+      ]
+    },
+    "remittance": {
+      "title": "Remittance Mobile App",
+      "desc": "Send money abroad with rates, KYC, and transaction receipts.",
+      "features": [
+        "Send money",
+        "Live rates",
+        "KYC verification",
+        "Receipts"
+      ]
+    },
+    "chatbot": {
+      "title": "AI Chatbot",
+      "desc": "24/7 intelligent support in Somali, Arabic, and English.",
+      "features": [
+        "24/7 replies",
+        "Multilingual",
+        "CRM sync",
+        "Workflow automation"
+      ]
+    },
+    "analytics": {
+      "title": "Business Analytics Dashboard",
+      "desc": "KPIs, charts, and exportable reports for decision makers.",
+      "features": [
+        "Live KPIs",
+        "Custom charts",
+        "Export reports",
+        "Role-based access"
+      ]
+    },
+    "automation": {
+      "title": "Workflow Automation",
+      "desc": "Automate repetitive business tasks and integrations.",
+      "features": [
+        "Task automation",
+        "API integrations",
+        "Triggers & rules",
+        "Audit logs"
+      ]
+    }
+  },
+  "so": {
+    "sms": {
+      "title": "Nidaamka Maamulka Dugsiga",
+      "desc": "Complete platform for students, teachers, exams, fees, and parent communication.",
+      "features": [
+        "Student records",
+        "Online exams",
+        "Parent portal",
+        "Fee management"
+      ]
+    },
+    "pos": {
+      "title": "POS & Kaydinta",
+      "desc": "Fast retail checkout with real-time stock and financial reporting.",
+      "features": [
+        "Quick checkout",
+        "Live inventory",
+        "Sales reports",
+        "Barcode scan"
+      ]
+    },
+    "hms": {
+      "title": "Nidaamka Isbitaalka",
+      "desc": "Healthcare platform for patients, appointments, pharmacy, and billing.",
+      "features": [
+        "Patient records",
+        "Appointments",
+        "Pharmacy module",
+        "Billing"
+      ]
+    },
+    "pharmacy": {
+      "title": "Maamulka Farmashiyaha",
+      "desc": "Track medicines, prescriptions, stock expiry, and sales.",
+      "features": [
+        "Prescriptions",
+        "Stock alerts",
+        "Expiry tracking",
+        "Sales reports"
+      ]
+    },
+    "clinic": {
+      "title": "Maamulka Rugta Caafimaadka",
+      "desc": "Lightweight clinic system for appointments and patient history.",
+      "features": [
+        "Patient queue",
+        "Medical history",
+        "Billing",
+        "SMS reminders"
+      ]
+    },
+    "payroll": {
+      "title": "HR & Mushaharka",
+      "desc": "Manage employees, salaries, attendance, and leave requests.",
+      "features": [
+        "Employee records",
+        "Payroll runs",
+        "Attendance",
+        "Leave management"
+      ]
+    },
+    "warehouse": {
+      "title": "Maamulka Bakhaarka",
+      "desc": "Control stock levels, transfers, and warehouse operations.",
+      "features": [
+        "Stock tracking",
+        "Transfers",
+        "Supplier orders",
+        "Reports"
+      ]
+    },
+    "crm": {
+      "title": "CRM Platform",
+      "desc": "Track leads, customers, deals, and sales pipeline.",
+      "features": [
+        "Lead tracking",
+        "Customer profiles",
+        "Pipeline view",
+        "Email integration"
+      ]
+    },
+    "lms": {
+      "title": "Nidaamka Waxbarashada Online",
+      "desc": "Online courses, quizzes, certificates, and student progress.",
+      "features": [
+        "Course builder",
+        "Quizzes",
+        "Certificates",
+        "Progress tracking"
+      ]
+    },
+    "university": {
+      "title": "Portal Jaamacadeed",
+      "desc": "Campus-wide system for faculties, courses, and registration.",
+      "features": [
+        "Course registration",
+        "Faculty portal",
+        "Grades",
+        "Student ID"
+      ]
+    },
+    "restaurant": {
+      "title": "POS Makhaayad",
+      "desc": "Table orders, kitchen display, menu, and billing for restaurants.",
+      "features": [
+        "Table management",
+        "Kitchen display",
+        "Menu control",
+        "Daily reports"
+      ]
+    },
+    "hotel": {
+      "title": "Nidaamka Huteelka",
+      "desc": "Reservations, room management, check-in, and guest billing.",
+      "features": [
+        "Room booking",
+        "Check-in/out",
+        "Housekeeping",
+        "Invoicing"
+      ]
+    },
+    "inventory": {
+      "title": "Kaydin Casri ah",
+      "desc": "Multi-branch inventory with alerts and purchase orders.",
+      "features": [
+        "Multi-branch",
+        "Low stock alerts",
+        "Purchase orders",
+        "Analytics"
+      ]
+    },
+    "logistics": {
+      "title": "Fleet & Logistics",
+      "desc": "Track vehicles, routes, deliveries, and driver performance.",
+      "features": [
+        "GPS tracking",
+        "Route planning",
+        "Driver app",
+        "Delivery proof"
+      ]
+    },
+    "ecommerce": {
+      "title": "Dukaan Online",
+      "desc": "Online store with mobile payments and product management.",
+      "features": [
+        "Online store",
+        "Mobile money",
+        "Product catalog",
+        "Order tracking"
+      ]
+    },
+    "marketplace": {
+      "title": "Suuqa Multi-Vendor",
+      "desc": "Multiple sellers, commissions, and unified checkout.",
+      "features": [
+        "Vendor stores",
+        "Commission rules",
+        "Unified cart",
+        "Admin dashboard"
+      ]
+    },
+    "realestate": {
+      "title": "Portal Guryaha",
+      "desc": "Property listings, search filters, and agent contact.",
+      "features": [
+        "Property listings",
+        "Map search",
+        "Agent profiles",
+        "Inquiry forms"
+      ]
+    },
+    "ngo": {
+      "title": "Platform Deeq NGO",
+      "desc": "Campaigns, donations, transparency reports for NGOs.",
+      "features": [
+        "Donation campaigns",
+        "Payment gateway",
+        "Donor dashboard",
+        "Impact reports"
+      ]
+    },
+    "govportal": {
+      "title": "Portal Adeegyada Dowladda",
+      "desc": "Citizen services, forms, and document requests online.",
+      "features": [
+        "Online forms",
+        "Document requests",
+        "Status tracking",
+        "Secure login"
+      ]
+    },
+    "cms": {
+      "title": "CMS Platform",
+      "desc": "Manage pages, blogs, media, and multilingual content.",
+      "features": [
+        "Page editor",
+        "Media library",
+        "Multi-language",
+        "Role permissions"
+      ]
+    },
+    "event": {
+      "title": "Maamulka Dhacdooyinka",
+      "desc": "Event registration, tickets, schedules, and check-in.",
+      "features": [
+        "Event pages",
+        "Ticket sales",
+        "QR check-in",
+        "Attendee list"
+      ]
+    },
+    "corporate": {
+      "title": "Website Shirkadeed",
+      "desc": "Professional brand website with services and contact flows.",
+      "features": [
+        "Modern UI",
+        "SEO ready",
+        "Lead forms",
+        "Multi-language"
+      ]
+    },
+    "portfolio-web": {
+      "title": "Portfolio Website",
+      "desc": "Showcase work, case studies, and client testimonials.",
+      "features": [
+        "Project gallery",
+        "Case studies",
+        "Testimonials",
+        "Contact CTA"
+      ]
+    },
+    "delivery": {
+      "title": "App Gaarsiin",
+      "desc": "Customer ordering with live driver tracking and payments.",
+      "features": [
+        "GPS tracking",
+        "Mobile payments",
+        "Driver panel",
+        "Push alerts"
+      ]
+    },
+    "banking": {
+      "title": "App Bangi Mobile",
+      "desc": "Account view, transfers, bills, and transaction history.",
+      "features": [
+        "Account balance",
+        "Money transfer",
+        "Bill pay",
+        "Transaction history"
+      ]
+    },
+    "taxi": {
+      "title": "App Taxi",
+      "desc": "Book rides, fare estimate, driver tracking, and cashless pay.",
+      "features": [
+        "Ride booking",
+        "Fare estimate",
+        "Live tracking",
+        "Driver ratings"
+      ]
+    },
+    "mosque": {
+      "title": "App Bulshada Masaajidka",
+      "desc": "Prayer times, announcements, and community donations.",
+      "features": [
+        "Prayer times",
+        "Announcements",
+        "Donations",
+        "Events calendar"
+      ]
+    },
+    "fitness": {
+      "title": "App Gym",
+      "desc": "Membership, class booking, and workout tracking.",
+      "features": [
+        "Membership",
+        "Class booking",
+        "Workout log",
+        "Trainer chat"
+      ]
+    },
+    "salon": {
+      "title": "App Salon",
+      "desc": "Appointments, stylist profiles, and service menu.",
+      "features": [
+        "Online booking",
+        "Stylist profiles",
+        "Service menu",
+        "Reminders"
+      ]
+    },
+    "foodorder": {
+      "title": "App Cuntada",
+      "desc": "Restaurant menus, cart, delivery, and order history.",
+      "features": [
+        "Restaurant menus",
+        "Live cart",
+        "Delivery tracking",
+        "Order history"
+      ]
+    },
+    "remittance": {
+      "title": "App Xawaalada",
+      "desc": "Send money abroad with rates, KYC, and transaction receipts.",
+      "features": [
+        "Send money",
+        "Live rates",
+        "KYC verification",
+        "Receipts"
+      ]
+    },
+    "chatbot": {
+      "title": "AI Chatbot",
+      "desc": "24/7 intelligent support in Somali, Arabic, and English.",
+      "features": [
+        "24/7 replies",
+        "Multilingual",
+        "CRM sync",
+        "Workflow automation"
+      ]
+    },
+    "analytics": {
+      "title": "Dashboard Analytics",
+      "desc": "KPIs, charts, and exportable reports for decision makers.",
+      "features": [
+        "Live KPIs",
+        "Custom charts",
+        "Export reports",
+        "Role-based access"
+      ]
+    },
+    "automation": {
+      "title": "Automation Workflow",
+      "desc": "Automate repetitive business tasks and integrations.",
+      "features": [
+        "Task automation",
+        "API integrations",
+        "Triggers & rules",
+        "Audit logs"
+      ]
+    }
+  },
+  "ar": {
+    "sms": {
+      "title": "نظام إدارة المدارس",
+      "desc": "Complete platform for students, teachers, exams, fees, and parent communication.",
+      "features": [
+        "Student records",
+        "Online exams",
+        "Parent portal",
+        "Fee management"
+      ]
+    },
+    "pos": {
+      "title": "نقاط البيع والمخزون",
+      "desc": "Fast retail checkout with real-time stock and financial reporting.",
+      "features": [
+        "Quick checkout",
+        "Live inventory",
+        "Sales reports",
+        "Barcode scan"
+      ]
+    },
+    "hms": {
+      "title": "نظام إدارة المستشفيات",
+      "desc": "Healthcare platform for patients, appointments, pharmacy, and billing.",
+      "features": [
+        "Patient records",
+        "Appointments",
+        "Pharmacy module",
+        "Billing"
+      ]
+    },
+    "pharmacy": {
+      "title": "إدارة الصيدلية",
+      "desc": "Track medicines, prescriptions, stock expiry, and sales.",
+      "features": [
+        "Prescriptions",
+        "Stock alerts",
+        "Expiry tracking",
+        "Sales reports"
+      ]
+    },
+    "clinic": {
+      "title": "إدارة العيادة",
+      "desc": "Lightweight clinic system for appointments and patient history.",
+      "features": [
+        "Patient queue",
+        "Medical history",
+        "Billing",
+        "SMS reminders"
+      ]
+    },
+    "payroll": {
+      "title": "الموارد البشرية والرواتب",
+      "desc": "Manage employees, salaries, attendance, and leave requests.",
+      "features": [
+        "Employee records",
+        "Payroll runs",
+        "Attendance",
+        "Leave management"
+      ]
+    },
+    "warehouse": {
+      "title": "إدارة المست warehouses",
+      "desc": "Control stock levels, transfers, and warehouse operations.",
+      "features": [
+        "Stock tracking",
+        "Transfers",
+        "Supplier orders",
+        "Reports"
+      ]
+    },
+    "crm": {
+      "title": "منصة CRM",
+      "desc": "Track leads, customers, deals, and sales pipeline.",
+      "features": [
+        "Lead tracking",
+        "Customer profiles",
+        "Pipeline view",
+        "Email integration"
+      ]
+    },
+    "lms": {
+      "title": "نظام التعلم الإلكتروني",
+      "desc": "Online courses, quizzes, certificates, and student progress.",
+      "features": [
+        "Course builder",
+        "Quizzes",
+        "Certificates",
+        "Progress tracking"
+      ]
+    },
+    "university": {
+      "title": "بوابة الجامعة",
+      "desc": "Campus-wide system for faculties, courses, and registration.",
+      "features": [
+        "Course registration",
+        "Faculty portal",
+        "Grades",
+        "Student ID"
+      ]
+    },
+    "restaurant": {
+      "title": "نقاط بيع المطاعم",
+      "desc": "Table orders, kitchen display, menu, and billing for restaurants.",
+      "features": [
+        "Table management",
+        "Kitchen display",
+        "Menu control",
+        "Daily reports"
+      ]
+    },
+    "hotel": {
+      "title": "نظام حجز الفنادق",
+      "desc": "Reservations, room management, check-in, and guest billing.",
+      "features": [
+        "Room booking",
+        "Check-in/out",
+        "Housekeeping",
+        "Invoicing"
+      ]
+    },
+    "inventory": {
+      "title": "مخزون ذكي",
+      "desc": "Multi-branch inventory with alerts and purchase orders.",
+      "features": [
+        "Multi-branch",
+        "Low stock alerts",
+        "Purchase orders",
+        "Analytics"
+      ]
+    },
+    "logistics": {
+      "title": "الأسطول واللوجستيات",
+      "desc": "Track vehicles, routes, deliveries, and driver performance.",
+      "features": [
+        "GPS tracking",
+        "Route planning",
+        "Driver app",
+        "Delivery proof"
+      ]
+    },
+    "ecommerce": {
+      "title": "منصة تجارة إلكترونية",
+      "desc": "Online store with mobile payments and product management.",
+      "features": [
+        "Online store",
+        "Mobile money",
+        "Product catalog",
+        "Order tracking"
+      ]
+    },
+    "marketplace": {
+      "title": "سوق متعدد البائعين",
+      "desc": "Multiple sellers, commissions, and unified checkout.",
+      "features": [
+        "Vendor stores",
+        "Commission rules",
+        "Unified cart",
+        "Admin dashboard"
+      ]
+    },
+    "realestate": {
+      "title": "بوابة العقارات",
+      "desc": "Property listings, search filters, and agent contact.",
+      "features": [
+        "Property listings",
+        "Map search",
+        "Agent profiles",
+        "Inquiry forms"
+      ]
+    },
+    "ngo": {
+      "title": "منصة تبرعات المنظمات",
+      "desc": "Campaigns, donations, transparency reports for NGOs.",
+      "features": [
+        "Donation campaigns",
+        "Payment gateway",
+        "Donor dashboard",
+        "Impact reports"
+      ]
+    },
+    "govportal": {
+      "title": "بوابة الخدمات الحكومية",
+      "desc": "Citizen services, forms, and document requests online.",
+      "features": [
+        "Online forms",
+        "Document requests",
+        "Status tracking",
+        "Secure login"
+      ]
+    },
+    "cms": {
+      "title": "نظام إدارة المحتوى",
+      "desc": "Manage pages, blogs, media, and multilingual content.",
+      "features": [
+        "Page editor",
+        "Media library",
+        "Multi-language",
+        "Role permissions"
+      ]
+    },
+    "event": {
+      "title": "إدارة الفعاليات",
+      "desc": "Event registration, tickets, schedules, and check-in.",
+      "features": [
+        "Event pages",
+        "Ticket sales",
+        "QR check-in",
+        "Attendee list"
+      ]
+    },
+    "corporate": {
+      "title": "موقع شركة",
+      "desc": "Professional brand website with services and contact flows.",
+      "features": [
+        "Modern UI",
+        "SEO ready",
+        "Lead forms",
+        "Multi-language"
+      ]
+    },
+    "portfolio-web": {
+      "title": "موقع portfolio",
+      "desc": "Showcase work, case studies, and client testimonials.",
+      "features": [
+        "Project gallery",
+        "Case studies",
+        "Testimonials",
+        "Contact CTA"
+      ]
+    },
+    "delivery": {
+      "title": "تطبيق توصيل",
+      "desc": "Customer ordering with live driver tracking and payments.",
+      "features": [
+        "GPS tracking",
+        "Mobile payments",
+        "Driver panel",
+        "Push alerts"
+      ]
+    },
+    "banking": {
+      "title": "تطبيق بنكي",
+      "desc": "Account view, transfers, bills, and transaction history.",
+      "features": [
+        "Account balance",
+        "Money transfer",
+        "Bill pay",
+        "Transaction history"
+      ]
+    },
+    "taxi": {
+      "title": "تطبيق تاكسي",
+      "desc": "Book rides, fare estimate, driver tracking, and cashless pay.",
+      "features": [
+        "Ride booking",
+        "Fare estimate",
+        "Live tracking",
+        "Driver ratings"
+      ]
+    },
+    "mosque": {
+      "title": "تطبيق المسجد",
+      "desc": "Prayer times, announcements, and community donations.",
+      "features": [
+        "Prayer times",
+        "Announcements",
+        "Donations",
+        "Events calendar"
+      ]
+    },
+    "fitness": {
+      "title": "تطبيق اللياقة",
+      "desc": "Membership, class booking, and workout tracking.",
+      "features": [
+        "Membership",
+        "Class booking",
+        "Workout log",
+        "Trainer chat"
+      ]
+    },
+    "salon": {
+      "title": "تطبيق الصالون",
+      "desc": "Appointments, stylist profiles, and service menu.",
+      "features": [
+        "Online booking",
+        "Stylist profiles",
+        "Service menu",
+        "Reminders"
+      ]
+    },
+    "foodorder": {
+      "title": "تطبيق طلب طعام",
+      "desc": "Restaurant menus, cart, delivery, and order history.",
+      "features": [
+        "Restaurant menus",
+        "Live cart",
+        "Delivery tracking",
+        "Order history"
+      ]
+    },
+    "remittance": {
+      "title": "تطبيق حوالات",
+      "desc": "Send money abroad with rates, KYC, and transaction receipts.",
+      "features": [
+        "Send money",
+        "Live rates",
+        "KYC verification",
+        "Receipts"
+      ]
+    },
+    "chatbot": {
+      "title": "روبوت محادثة",
+      "desc": "24/7 intelligent support in Somali, Arabic, and English.",
+      "features": [
+        "24/7 replies",
+        "Multilingual",
+        "CRM sync",
+        "Workflow automation"
+      ]
+    },
+    "analytics": {
+      "title": "لوحة تحليلات",
+      "desc": "KPIs, charts, and exportable reports for decision makers.",
+      "features": [
+        "Live KPIs",
+        "Custom charts",
+        "Export reports",
+        "Role-based access"
+      ]
+    },
+    "automation": {
+      "title": "أتمتة سير العمل",
+      "desc": "Automate repetitive business tasks and integrations.",
+      "features": [
+        "Task automation",
+        "API integrations",
+        "Triggers & rules",
+        "Audit logs"
+      ]
+    }
+  }
+}
