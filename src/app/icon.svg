@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" role="img" aria-label="KTS NOVA">
-  <rect width="32" height="32" rx="8" fill="#1A2744"/>
-  <rect x="6" y="6" width="20" height="20" rx="5" fill="#00C896" opacity="0.12"/>
-  <path fill="#00C896" d="M8 22V15h2.8c.8 0 1.4-.6 1.4-1.4V12h3.8v2.8h2.4V22H8Z"/>
-  <path fill="#00C896" d="M12 8.5h5.2v2.6H19v4h-2.8V19h-2.6v-3.4H12V8.5Z"/>
-  <circle cx="20.2" cy="10.2" r="2.2" fill="#00C896"/>
-  <path fill="#00C896" d="M19.4 12.1h1.6v1.2c0 .8-.6 1.4-1.4 1.4h-.9v-1.3h.5c.3 0 .5-.3.5-.6v-.7Z"/>
-  <circle cx="23.8" cy="8.2" r="2" fill="#FFB347"/>
-</svg>
