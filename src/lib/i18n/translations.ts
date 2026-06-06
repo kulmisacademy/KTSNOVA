@@ -119,6 +119,23 @@ export interface Translations {
       thankYou: string;
       projectIntro: string;
       needs: Record<string, string>;
+      contactMethod: string;
+      viaWhatsApp: string;
+      viaEmail: string;
+      sendWhatsApp: string;
+      sendEmail: string;
+      quoteTitle: string;
+      mailSubject: string;
+      whatsappThankYou: string;
+      labels: {
+        requestTitle: string;
+        name: string;
+        email: string;
+        phone: string;
+        need: string;
+        message: string;
+        project: string;
+      };
     };
     info: {
       location: string;
@@ -396,6 +413,23 @@ export const translations: Record<Locale, Translations> = {
           ai: "AI & Automation",
           other: "Kale",
         },
+        contactMethod: "Sidee baad u diraysaa?",
+        viaWhatsApp: "WhatsApp",
+        viaEmail: "Email",
+        sendWhatsApp: "U dir WhatsApp →",
+        sendEmail: "U dir Email →",
+        quoteTitle: "Codso Qiimo Gaar ah",
+        mailSubject: "Codsi Qiimo Gaar ah — KTS NOVA",
+        whatsappThankYou: "WhatsApp ayaa furmaya… Waan kula soo xiriiri doonaa!",
+        labels: {
+          requestTitle: "Codsi Qiimo Gaar ah — KTS NOVA",
+          name: "Magac",
+          email: "Email",
+          phone: "Telefoon",
+          need: "Baahida",
+          message: "Farriin",
+          project: "Mashruuc",
+        },
       },
       info: {
         location: "Mogadishu, Somalia",
@@ -671,6 +705,23 @@ export const translations: Record<Locale, Translations> = {
           ai: "AI & Automation",
           other: "Other",
         },
+        contactMethod: "How would you like to send?",
+        viaWhatsApp: "WhatsApp",
+        viaEmail: "Email",
+        sendWhatsApp: "Send via WhatsApp →",
+        sendEmail: "Send via Email →",
+        quoteTitle: "Request a Special Price",
+        mailSubject: "Special Price Request — KTS NOVA",
+        whatsappThankYou: "Opening WhatsApp… We'll reply shortly!",
+        labels: {
+          requestTitle: "Special Price Request — KTS NOVA",
+          name: "Name",
+          email: "Email",
+          phone: "Phone",
+          need: "Service",
+          message: "Message",
+          project: "Project",
+        },
       },
       info: {
         location: "Mogadishu, Somalia",
@@ -940,6 +991,23 @@ export const translations: Record<Locale, Translations> = {
           ecommerce: "تجارة إلكترونية",
           ai: "ذكاء اصطناعي وأتمتة",
           other: "أخرى",
+        },
+        contactMethod: "كيف تريد الإرسال؟",
+        viaWhatsApp: "واتساب",
+        viaEmail: "البريد الإلكتروني",
+        sendWhatsApp: "إرسال عبر واتساب ←",
+        sendEmail: "إرسال عبر البريد ←",
+        quoteTitle: "اطلب سعراً خاصاً",
+        mailSubject: "طلب سعر خاص — KTS NOVA",
+        whatsappThankYou: "جاري فتح واتساب… سنتواصل معك قريباً!",
+        labels: {
+          requestTitle: "طلب سعر خاص — KTS NOVA",
+          name: "الاسم",
+          email: "البريد الإلكتروني",
+          phone: "الهاتف",
+          need: "الخدمة",
+          message: "الرسالة",
+          project: "المشروع",
         },
       },
       info: {

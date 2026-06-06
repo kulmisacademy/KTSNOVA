@@ -58,7 +58,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
     };
   }, [handleKeyDown]);
 
-  const contactHref = `/contact?project=${encodeURIComponent(content.title)}&need=${categoryNeedMap[project.category] ?? "other"}`;
+  const contactHref = `/contact?project=${encodeURIComponent(content.title)}&need=${categoryNeedMap[project.category] ?? "other"}&via=whatsapp`;
 
   return (
     <motion.div

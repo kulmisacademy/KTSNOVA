@@ -3,17 +3,45 @@
 import { Suspense, useState, type FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
-import { MapPin, Mail, Phone, Clock, Send, CheckCircle2, MessageCircle } from "lucide-react";
+import {
+  MapPin,
+  Mail,
+  Phone,
+  Clock,
+  Send,
+  CheckCircle2,
+  MessageCircle,
+} from "lucide-react";
 import PageHero from "@/components/PageHero";
 import CtaSection from "@/components/CtaSection";
 import { useLanguage } from "@/lib/i18n/LanguageProvider";
 import { fadeUp } from "@/lib/motion";
-import { CONTACT } from "@/lib/data/contact";
+import {
+  CONTACT,
+  buildContactMailtoUrl,
+  buildContactWhatsAppMessage,
+  buildWhatsAppUrl,
+} from "@/lib/data/contact";
+import { cn } from "@/lib/utils";
+
+type ContactMethod = "whatsapp" | "email";
 
 const contactItems = [
   { icon: MapPin, key: "location" as const, href: null, external: false },
-  { icon: Mail, key: "email" as const, href: "mailto:info@ktsnova.com", value: "info@ktsnova.com", external: false },
-  { icon: Phone, key: "phone" as const, href: CONTACT.phone.tel, value: CONTACT.phone.display, external: false },
+  {
+    icon: Mail,
+    key: "email" as const,
+    href: `mailto:${CONTACT.email}`,
+    value: CONTACT.email,
+    external: false,
+  },
+  {
+    icon: Phone,
+    key: "phone" as const,
+    href: CONTACT.phone.tel,
+    value: CONTACT.phone.display,
+    external: false,
+  },
   {
     icon: MessageCircle,
     key: "whatsapp" as const,
@@ -37,24 +65,58 @@ function ContactPageContent() {
   const searchParams = useSearchParams();
   const projectName = searchParams.get("project") ?? "";
   const needParam = searchParams.get("need") ?? "";
+  const viaParam = searchParams.get("via") ?? "";
   const [submitted, setSubmitted] = useState(false);
+  const [sentViaWhatsApp, setSentViaWhatsApp] = useState(false);
   const [showMap, setShowMap] = useState(false);
+  const [method, setMethod] = useState<ContactMethod>(
+    viaParam === "email" ? "email" : "whatsapp"
+  );
+
   const needKeys = ["software", "web", "mobile", "ecommerce", "ai", "other"] as const;
   const defaultNeed = needKeys.includes(needParam as (typeof needKeys)[number])
     ? needParam
     : "software";
   const defaultMessage = projectName ? `${t.contactPage.form.projectIntro} ${projectName}\n\n` : "";
+  const isQuoteRequest = Boolean(projectName);
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const needKey = String(fd.get("need") ?? defaultNeed);
+    const needLabel =
+      t.contactPage.form.needs[needKey as (typeof needKeys)[number]] ?? needKey;
+
+    const payload = {
+      name: String(fd.get("name") ?? "").trim(),
+      email: String(fd.get("email") ?? "").trim(),
+      phone: String(fd.get("phone") ?? "").trim(),
+      need: needLabel,
+      message: String(fd.get("message") ?? "").trim(),
+      projectName,
+    };
+
+    if (method === "whatsapp") {
+      const text = buildContactWhatsAppMessage(payload, t.contactPage.form.labels);
+      window.open(buildWhatsAppUrl(text), "_blank", "noopener,noreferrer");
+      setSentViaWhatsApp(true);
+    } else {
+      window.location.href = buildContactMailtoUrl(payload, t.contactPage.form.mailSubject);
+    }
+
     setSubmitted(true);
   }
+
+  const formTitle = isQuoteRequest
+    ? t.contactPage.form.quoteTitle
+    : t.contactPage.form.send.replace(" →", "").replace(" ←", "");
 
   return (
     <div className="pt-20">
       <PageHero
         label={t.nav.contact}
-        title={t.contactPage.title}
+        title={isQuoteRequest ? t.contactPage.form.quoteTitle : t.contactPage.title}
         subtitle={t.contactPage.subtitle}
       />
 
@@ -71,19 +133,59 @@ function ContactPageContent() {
             {submitted ? (
               <div className="flex flex-col items-center py-16 text-center">
                 <CheckCircle2 className="mb-4 text-nova-teal" size={48} />
-                <p className="text-lg font-semibold text-nova-navy">{t.contactPage.form.thankYou}</p>
+                <p className="text-lg font-semibold text-nova-navy">
+                  {sentViaWhatsApp
+                    ? t.contactPage.form.whatsappThankYou
+                    : t.contactPage.form.thankYou}
+                </p>
               </div>
             ) : (
               <>
-                <h2 className="mb-6 font-heading text-xl font-bold text-nova-navy">
-                  {t.contactPage.form.send.replace(" →", "").replace(" ←", "")}
-                </h2>
+                <h2 className="mb-6 font-heading text-xl font-bold text-nova-navy">{formTitle}</h2>
+
+                <div className="mb-5">
+                  <p className="mb-2 text-sm font-medium text-nova-navy">
+                    {t.contactPage.form.contactMethod}
+                  </p>
+                  <div className="grid grid-cols-2 gap-3">
+                    <button
+                      type="button"
+                      onClick={() => setMethod("whatsapp")}
+                      data-cursor="link"
+                      className={cn(
+                        "flex items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm font-semibold transition-all min-h-[48px]",
+                        method === "whatsapp"
+                          ? "border-[#25D366] bg-[#25D366]/10 text-[#128C7E] shadow-sm"
+                          : "border-nova-navy/10 bg-nova-ash/30 text-nova-navy/70 hover:border-[#25D366]/40"
+                      )}
+                    >
+                      <MessageCircle size={18} />
+                      {t.contactPage.form.viaWhatsApp}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setMethod("email")}
+                      data-cursor="link"
+                      className={cn(
+                        "flex items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm font-semibold transition-all min-h-[48px]",
+                        method === "email"
+                          ? "border-nova-teal bg-nova-teal/10 text-nova-teal shadow-sm"
+                          : "border-nova-navy/10 bg-nova-ash/30 text-nova-navy/70 hover:border-nova-teal/40"
+                      )}
+                    >
+                      <Mail size={18} />
+                      {t.contactPage.form.viaEmail}
+                    </button>
+                  </div>
+                </div>
+
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div className="sm:col-span-2">
                     <label className="mb-1.5 block text-sm font-medium text-nova-navy">
                       {t.contactPage.form.name}
                     </label>
                     <input
+                      name="name"
                       type="text"
                       required
                       className="w-full rounded-xl border border-nova-navy/10 bg-nova-ash/30 px-4 py-3 text-base outline-none transition-colors focus:border-nova-teal focus:ring-2 focus:ring-nova-teal/20"
@@ -94,6 +196,7 @@ function ContactPageContent() {
                       {t.contactPage.form.email}
                     </label>
                     <input
+                      name="email"
                       type="email"
                       required
                       className="w-full rounded-xl border border-nova-navy/10 bg-nova-ash/30 px-4 py-3 text-base outline-none transition-colors focus:border-nova-teal focus:ring-2 focus:ring-nova-teal/20"
@@ -104,6 +207,7 @@ function ContactPageContent() {
                       {t.contactPage.form.phone}
                     </label>
                     <input
+                      name="phone"
                       type="tel"
                       className="w-full rounded-xl border border-nova-navy/10 bg-nova-ash/30 px-4 py-3 text-base outline-none transition-colors focus:border-nova-teal focus:ring-2 focus:ring-nova-teal/20"
                     />
@@ -113,6 +217,7 @@ function ContactPageContent() {
                       {t.contactPage.form.need}
                     </label>
                     <select
+                      name="need"
                       defaultValue={defaultNeed}
                       className="w-full rounded-xl border border-nova-navy/10 bg-nova-ash/30 px-4 py-3 text-base outline-none transition-colors focus:border-nova-teal focus:ring-2 focus:ring-nova-teal/20"
                     >
@@ -128,6 +233,7 @@ function ContactPageContent() {
                       {t.contactPage.form.message}
                     </label>
                     <textarea
+                      name="message"
                       rows={5}
                       required
                       defaultValue={defaultMessage}
@@ -138,10 +244,21 @@ function ContactPageContent() {
                 <button
                   type="submit"
                   data-cursor="cta"
-                  className="btn-primary mt-6 inline-flex w-full items-center justify-center gap-2 sm:w-auto"
+                  className={cn(
+                    "mt-6 inline-flex w-full items-center justify-center gap-2 sm:w-auto",
+                    method === "whatsapp"
+                      ? "rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#25D366]/30 min-h-[48px]"
+                      : "btn-primary"
+                  )}
                 >
-                  <Send size={18} />
-                  {t.contactPage.form.send}
+                  {method === "whatsapp" ? (
+                    <MessageCircle size={18} />
+                  ) : (
+                    <Send size={18} />
+                  )}
+                  {method === "whatsapp"
+                    ? t.contactPage.form.sendWhatsApp
+                    : t.contactPage.form.sendEmail}
                 </button>
               </>
             )}
