@@ -3,28 +3,16 @@
 import { Suspense, useState, type FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
-import {
-  MapPin,
-  Mail,
-  Phone,
-  Clock,
-  Send,
-  CheckCircle2,
-  MessageCircle,
-} from "lucide-react";
+import { MapPin, Mail, Phone, Clock, CheckCircle2, MessageCircle } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import CtaSection from "@/components/CtaSection";
 import { useLanguage } from "@/lib/i18n/LanguageProvider";
 import { fadeUp } from "@/lib/motion";
 import {
   CONTACT,
-  buildContactMailtoUrl,
   buildContactWhatsAppMessage,
   buildWhatsAppUrl,
 } from "@/lib/data/contact";
-import { cn } from "@/lib/utils";
-
-type ContactMethod = "whatsapp" | "email";
 
 const contactItems = [
   { icon: MapPin, key: "location" as const, href: null, external: false },
@@ -65,13 +53,8 @@ function ContactPageContent() {
   const searchParams = useSearchParams();
   const projectName = searchParams.get("project") ?? "";
   const needParam = searchParams.get("need") ?? "";
-  const viaParam = searchParams.get("via") ?? "";
   const [submitted, setSubmitted] = useState(false);
-  const [sentViaWhatsApp, setSentViaWhatsApp] = useState(false);
   const [showMap, setShowMap] = useState(false);
-  const [method, setMethod] = useState<ContactMethod>(
-    viaParam === "email" ? "email" : "whatsapp"
-  );
 
   const needKeys = ["software", "web", "mobile", "ecommerce", "ai", "other"] as const;
   const defaultNeed = needKeys.includes(needParam as (typeof needKeys)[number])
@@ -97,14 +80,8 @@ function ContactPageContent() {
       projectName,
     };
 
-    if (method === "whatsapp") {
-      const text = buildContactWhatsAppMessage(payload, t.contactPage.form.labels);
-      window.open(buildWhatsAppUrl(text), "_blank", "noopener,noreferrer");
-      setSentViaWhatsApp(true);
-    } else {
-      window.location.href = buildContactMailtoUrl(payload, t.contactPage.form.mailSubject);
-    }
-
+    const text = buildContactWhatsAppMessage(payload, t.contactPage.form.labels);
+    window.open(buildWhatsAppUrl(text), "_blank", "noopener,noreferrer");
     setSubmitted(true);
   }
 
@@ -134,50 +111,12 @@ function ContactPageContent() {
               <div className="flex flex-col items-center py-16 text-center">
                 <CheckCircle2 className="mb-4 text-nova-teal" size={48} />
                 <p className="text-lg font-semibold text-nova-navy">
-                  {sentViaWhatsApp
-                    ? t.contactPage.form.whatsappThankYou
-                    : t.contactPage.form.thankYou}
+                  {t.contactPage.form.whatsappThankYou}
                 </p>
               </div>
             ) : (
               <>
                 <h2 className="mb-6 font-heading text-xl font-bold text-nova-navy">{formTitle}</h2>
-
-                <div className="mb-5">
-                  <p className="mb-2 text-sm font-medium text-nova-navy">
-                    {t.contactPage.form.contactMethod}
-                  </p>
-                  <div className="grid grid-cols-2 gap-3">
-                    <button
-                      type="button"
-                      onClick={() => setMethod("whatsapp")}
-                      data-cursor="link"
-                      className={cn(
-                        "flex items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm font-semibold transition-all min-h-[48px]",
-                        method === "whatsapp"
-                          ? "border-[#25D366] bg-[#25D366]/10 text-[#128C7E] shadow-sm"
-                          : "border-nova-navy/10 bg-nova-ash/30 text-nova-navy/70 hover:border-[#25D366]/40"
-                      )}
-                    >
-                      <MessageCircle size={18} />
-                      {t.contactPage.form.viaWhatsApp}
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setMethod("email")}
-                      data-cursor="link"
-                      className={cn(
-                        "flex items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm font-semibold transition-all min-h-[48px]",
-                        method === "email"
-                          ? "border-nova-teal bg-nova-teal/10 text-nova-teal shadow-sm"
-                          : "border-nova-navy/10 bg-nova-ash/30 text-nova-navy/70 hover:border-nova-teal/40"
-                      )}
-                    >
-                      <Mail size={18} />
-                      {t.contactPage.form.viaEmail}
-                    </button>
-                  </div>
-                </div>
 
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div className="sm:col-span-2">
@@ -244,21 +183,10 @@ function ContactPageContent() {
                 <button
                   type="submit"
                   data-cursor="cta"
-                  className={cn(
-                    "mt-6 inline-flex w-full items-center justify-center gap-2 sm:w-auto",
-                    method === "whatsapp"
-                      ? "rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#25D366]/30 min-h-[48px]"
-                      : "btn-primary"
-                  )}
+                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#25D366]/30 min-h-[48px] sm:w-auto"
                 >
-                  {method === "whatsapp" ? (
-                    <MessageCircle size={18} />
-                  ) : (
-                    <Send size={18} />
-                  )}
-                  {method === "whatsapp"
-                    ? t.contactPage.form.sendWhatsApp
-                    : t.contactPage.form.sendEmail}
+                  <MessageCircle size={18} />
+                  {t.contactPage.form.sendWhatsApp}
                 </button>
               </>
             )}

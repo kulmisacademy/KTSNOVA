@@ -62,21 +62,3 @@ export function buildContactWhatsAppMessage(
   return lines.join("\n");
 }
 
-export function buildContactMailtoUrl(
-  payload: ContactFormPayload,
-  subject: string
-): string {
-  const body = [
-    `Name: ${payload.name}`,
-    `Email: ${payload.email}`,
-    payload.phone.trim() ? `Phone: ${payload.phone}` : "",
-    `Need: ${payload.need}`,
-    payload.projectName?.trim() ? `Project: ${payload.projectName}` : "",
-    "",
-    payload.message,
-  ]
-    .filter(Boolean)
-    .join("\n");
-
-  return `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-}
