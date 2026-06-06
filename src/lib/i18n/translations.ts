@@ -69,6 +69,8 @@ export interface Translations {
     rights: string;
     brandTag: string;
     brandName: string;
+    privacy: string;
+    terms: string;
   };
   about: {
     title: string;
@@ -251,6 +253,8 @@ export const translations: Record<Locale, Translations> = {
       rights: "© 2026 KTS NOVA — Dhammaan Xuquuqda Way Xafidan Yihiin",
       brandTag: "Summad ka tirsan",
       brandName: "Kulmis Tech Solution",
+      privacy: "Siyaasadda Asturnaanta",
+      terms: "Shuruudaha & Xaaladaha",
     },
     about: {
       title: "Nagu Saabsan",
@@ -543,6 +547,8 @@ export const translations: Record<Locale, Translations> = {
       rights: "© 2026 KTS NOVA — All Rights Reserved",
       brandTag: "A Brand of",
       brandName: "Kulmis Tech Solution",
+      privacy: "Privacy Policy",
+      terms: "Terms & Conditions",
     },
     about: {
       title: "About Us",
@@ -835,6 +841,8 @@ export const translations: Record<Locale, Translations> = {
       rights: "© 2026 KTS NOVA — جميع الحقوق محفوظة",
       brandTag: "علامة تجارية تابعة لـ",
       brandName: "Kulmis Tech Solution",
+      privacy: "سياسة الخصوصية",
+      terms: "الشروط والأحكام",
     },
     about: {
       title: "من نحن",

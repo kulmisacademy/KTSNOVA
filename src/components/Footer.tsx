@@ -54,7 +54,14 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <span className="text-white/50">{t.footer.blog}</span>
+                <Link href="/privacy" data-cursor="link" className="hover:text-nova-teal">
+                  {t.footer.privacy}
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" data-cursor="link" className="hover:text-nova-teal">
+                  {t.footer.terms}
+                </Link>
               </li>
             </ul>
           </div>
@@ -107,9 +114,20 @@ export default function Footer() {
         />
 
         <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 sm:flex-row sm:px-6 lg:px-8">
-          <p className="text-center font-heading text-sm tracking-wide sm:text-start">
-            <span className="text-white/90">{t.footer.rights}</span>
-          </p>
+          <div className="flex flex-col items-center gap-2 sm:items-start">
+            <p className="text-center font-heading text-sm tracking-wide sm:text-start">
+              <span className="text-white/90">{t.footer.rights}</span>
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-3 text-xs text-white/45 sm:justify-start">
+              <Link href="/privacy" data-cursor="link" className="hover:text-nova-teal">
+                {t.footer.privacy}
+              </Link>
+              <span aria-hidden>·</span>
+              <Link href="/terms" data-cursor="link" className="hover:text-nova-teal">
+                {t.footer.terms}
+              </Link>
+            </div>
+          </div>
 
           <div className="flex items-center gap-3">
             <span className="hidden h-px w-8 bg-gradient-to-r from-transparent to-nova-gold/40 sm:block" aria-hidden />
